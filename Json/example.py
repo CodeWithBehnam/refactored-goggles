@@ -1,6 +1,6 @@
-from flatten_json_handling_list_values import flatten_json
-import json
-# Example usage:
+from json_helpers import flatten_json_with_list_to_string, flatten_json_with_list_to_columns
+
+# JSON string provided
 json_data = '''
 {
     "value": [
@@ -44,19 +44,9 @@ json_data = '''
 }
 '''
 
+df_string = flatten_json_with_list_to_string(json_data)
+df_columns = flatten_json_with_list_to_columns(json_data)
 
-# Parse JSON
-data = json.loads(json_data)
+df_string.head()
+df_columns.head()
 
-# Flatten each dictionary in 'value'
-flattened_data = []
-for item in data['value']:
-    flattened_item = flatten_json(item)
-    flattened_data.append(flattened_item)
-
-# Convert to pandas DataFrame
-import pandas as pd
-df = pd.DataFrame(flattened_data)
-
-# Display the DataFrame (you won't see this output, but it's here for reference)
-print(df.to_string())

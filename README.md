@@ -1,14 +1,25 @@
-# refactored-goggles
-# refactored-goggles
+# JSON Flattening Utilities
 
-A simple and elegant repository for managing and organizing your code.
+A Python utility library for flattening nested JSON structures into pandas DataFrames.
 
 ## Features
 
-- Clean and organized codebase
-- Easy to understand structure
-- Well-documented components
+- Two main flattening approaches:
+  - `flatten_json_with_list_to_string`: Converts lists to comma-separated strings
+  - `flatten_json_with_list_to_columns`: Parses lists into separate columns
+- Handles deeply nested JSON structures
+- Preserves data types
+- Built on pandas for efficient data manipulation
 
 ## Getting Started
 
 1. Clone the repository
+2. Ensure you have the required dependencies:
+   - pandas
+   - json (built-in)
+3. Import the desired function:
+   ```python
+   from json_helpers import flatten_json_with_list_to_string
+   # or
+   from json_helpers import flatten_json_with_list_to_columns
+   ```
